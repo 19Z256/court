@@ -1,0 +1,113 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="form.css">
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-success fixed-top " style="padding:0;">
+    <div class="container-fluid mt-2 mb-2">
+      <div class="col-lg-12">
+        <div class="col-md-1 float-left" style="display: flex;">
+        <a href="../home.php"	>
+          <img width="40%"  src="../highcourt/assets/images/banner_latest.jpg">
+        </a></div>
+        <div class="col-md-2 mt-2 float-right">
+  <div class="container">  
+    <form id="contact" action="" method="post">
+      <h3>Quick Contact</h3>
+      <h4>You are now currently Mailing to Honourable High Court Judge</h4>
+      <fieldset>
+        <input placeholder="Your name" id="name" name="name" type="text" tabindex="1" autofocus>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Your Email Address" id="email" name="email" type="email" tabindex="2">
+      </fieldset>
+      <fieldset>
+        <input placeholder="Type your subject line" id="subject" type="text" name="subject" tabindex="4">
+      </fieldset>
+      <fieldset>
+        <select name="cadre" id = "cadre">
+        <option value="-1" selected>select your cadre</option>
+        <option value="Chief Administrative Officer">Chief Administrative Officer</option>
+        <option value="Court Manager">Court Manager</option>
+        <option value="System Analyst">System Analyst</option>
+        <option value="Sherishtadar(Cat.-I)">Sherishtadar(Cat.-I)</option>
+        <option value="Bench Clerk(Gr.-I)">Bench Clerk(Gr.-I)</option>
+        <option value="Head Clerk(Cat.-II)">Head Clerk(Cat.-II)</option>
+        <option value="Senior Sherishtadar(Cat.-II)">Senior Sherishtadar(Cat.-II)</option>
+        <option value="Protocol officer">Protocol officer</option>
+        <option value="Central Nazir">Central Nazir</option>
+        <option value="Head Clerk(Cat.-III)">Head Clerk(Cat.-III)</option>
+        <option value="Superintendent">Superintendent</option>
+        <option value="Deputy Nazir">Deputy Nazir</option>
+        <option value="Translator">Translator</option>
+        <option value="Executive Assistant">Executive Assistant</option>
+        <option value="Steno Typist(Gr.I)">Steno Typist(Gr.I)</option>
+        <option value="Assistant Programmer">Assistant Programmer</option>
+        <option value="Bench Clerk(Gr.II)">Bench Clerk(Gr.II)</option>
+        <option value="Head Clerk Criminal Court(Cat-IV)">Head Clerk Criminal Court(Cat-IV)</option>
+        <option value="Assistant">Assistant</option>
+        <option value="Steno-Typist(Gr.III)">Steno-Typist(Gr.III)</option>
+        <option value="Junior Assistant">Junior Assistant</option>
+        <option value="Junior Superintendent of copyist">Junior Superintendent of copyist</option>
+        <option value="Typist">Typist</option>
+        <option value="Computer Operator">Computer Operator</option>
+        <option value="Examiner">Examiner</option>
+        <option value="Reader">Reader</option>
+        <option value="Senior Bailiff">Senior Bailiff</option>
+        <option value="Junior Bailiff">Junior Bailiff</option>
+        <option value="Driver">Driver</option>
+        <option value="Xerox Machine Operator">Xerox Machine Operator</option>
+        <option value="Record Clerk">Record Clerk</option>
+        <option value="Office Assistant">Office Assistant</option>
+        <option value="Scavenger">Scavenger</option>
+        <option value="Sanitary Worker">Sanitary Worker</option>
+        <option value="Sweeper">Sweeper</option>
+        <option value="Gardner">Gardner</option>
+        <option value="Watchman">Watchman</option>
+        <option value="Night Watchman">Night Watchman</option>
+        <option value="Masalchi cum Night Watchman">Masalchi cum Night Watchman</option>
+        <option value="Masalchi">Masalchi</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <textarea name="message" id="message" placeholder="Type your Message Details Here..." tabindex="5"></textarea>
+      </fieldset>
+      <fieldset>
+        <button type="submit" name="submit" id="btn" data-submit="...Sending">Send</button>
+      </fieldset>  
+    </form>
+  </div>
+</body>
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+<script>
+  var btn = document.getElementById('btn');
+  btn.addEventListener('click',function(e)){
+    e.preventDefault()
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var subject = document.getElementById('subject').value;
+    var message = document.getElementById('mesaage').value;
+    var cadre = document.getElementById('cadre').value;
+    var body = 'name: ' +name + '<br/> email: ' + email + '<br/> subject ' + subject + '<br/> message ' + message subject + '<br/> cadre ' + cadre;
+
+    Email.send({
+    Host : "smtp.gmail.com",
+    Username : "mathanasekaran26@gmail.com",
+    Password : "mat@2407",
+    To : 'mathanasekaran26@gmail.com',
+    From : email,
+    Subject : "This is the subject",
+    Body : "And this is the body"
+}).then(
+  message => alert(message)
+);
+  }
+</script>
+</html>
